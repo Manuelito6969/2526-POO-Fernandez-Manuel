@@ -1,2 +1,0 @@
-# Tecnicas-dePOO
-POO tareas
