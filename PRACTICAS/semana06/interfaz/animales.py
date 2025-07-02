@@ -32,7 +32,8 @@ class Animal:
 
     # Método que será sobrescrito (polimorfismo)
     def hacer_sonido(self):
-        print("Este animal hace un sonido genérico.")
+        return "Este animal hace un sonido genérico."
+
 
 # Clase derivada 1
 class Perro(Animal):
@@ -42,7 +43,7 @@ class Perro(Animal):
 
     # Polimorfismo: sobrescribimos el método hacer_sonido
     def hacer_sonido(self):
-        print("Guau guau")
+        return "Guau guau"
 
 
 # Clase derivada 2
@@ -53,7 +54,7 @@ class Gato(Animal):
 
     # Polimorfismo: sobrescribimos el método hacer_sonido
     def hacer_sonido(self):
-        print("Miau miau")
+        return "Miau miau"
 
 
 # Clase derivada 3
@@ -64,10 +65,11 @@ class Loro(Animal):
 
     def hacer_sonido(self):
         if self.puede_hablar:
-            print("¡Hola! Soy un loro que habla.")
+            return "¡Hola! Soy un loro que habla."
         else:
-            print("Squawk squawk!")
+            return "Squawk squawk!"
 
+'''
 # -----------------------------
 # Simulación del programa
 # -----------------------------
@@ -93,3 +95,4 @@ print(f"Después de cumplir años, {perro1.get_nombre()} tiene {perro1.get_edad(
 
 # Intentar asignar una edad inválida
 perro1.set_edad(-1)  # Debería mostrar un mensaje de error
+'''
