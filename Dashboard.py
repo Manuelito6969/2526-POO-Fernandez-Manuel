@@ -1,4 +1,3 @@
-# Adaptación realizada por Manuel Fernandez para organizar tareas de POO.
 import os
 import subprocess
 
