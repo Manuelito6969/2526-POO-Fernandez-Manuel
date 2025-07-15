@@ -15,7 +15,6 @@ class Recurso:
 # de los constructores y destructores:
 
 mi_recurso = Recurso(1)
-del mi_recurso
 
 # La instancia mi_recurso de la clase Recurso es creada y luego eliminada.
 # Esto desencadena primero el constructor y luego el destructor, gestionando
