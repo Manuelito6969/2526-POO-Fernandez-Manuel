@@ -28,7 +28,6 @@ class Producto:
     def set_precio(self, precio):
         self.precio = precio
 
-
 # Clase que representa el inventario
 class Inventario:
     def __init__(self):
@@ -86,7 +85,6 @@ class Inventario:
         for p in self.productos:
             print(f"{p.get_id():<6} {p.get_nombre():<15} {p.get_cantidad():<10} {p.get_precio():<10.2f}")
 
-
 # Función principal con menú
 def menu():
     inventario = Inventario()
@@ -135,7 +133,6 @@ def menu():
 
         else:
             print("Opción no válida, intente de nuevo.")
-
 
 # Ejecutar el programa
 menu()
