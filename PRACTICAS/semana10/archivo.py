@@ -8,13 +8,13 @@ class GestionInventario:
     """
     Manejo simple de persistencia en CSV.
     - cargar() -> List[Producto]
-    - guardar(productos) -> bool
+    - guardar(lproducto) -> bool
     Formato CSV: id,nombre,cantidad,precio
     """
     CAMPOS = ["id", "nombre", "cantidad", "precio"]
 
-    def __init__(self, ruta: str):
-        self.ruta = ruta
+    def __init__(self):
+        self.ruta = "inventario.csv"
         self._verificar_existencia_archivo()
 
     def _verificar_existencia_archivo(self) -> None:
@@ -31,13 +31,13 @@ class GestionInventario:
             print(f"No se pudo crear el archivo '{self.ruta}': {e}")
 
     def cargar(self) -> List[Producto]:
-        productos: List[Producto] = []
+        lproducto: List[Producto] = []
         try:
             with open(self.ruta, "r", newline="", encoding="utf-8") as f:
                 reader = csv.DictReader(f)
                 if reader.fieldnames is None or any(c not in reader.fieldnames for c in self.CAMPOS):
                     print("Encabezado inválido en el archivo. Se ignora el contenido.")
-                    return productos
+                    return lproducto
                 for idx, row in enumerate(reader, start=2):
                     try:
                         idp = str(row["id"]).strip()
@@ -46,7 +46,7 @@ class GestionInventario:
                         precio = float(row["precio"])
                         if not idp:
                             raise ValueError("ID vacío")
-                        productos.append(Producto(idp, nombre, cantidad, precio))
+                        lproducto.append(Producto(idp, nombre, cantidad, precio))
                     except Exception as e:
                         print(f"Fila {idx} inválida: {e}. Saltada.")
         except FileNotFoundError:
@@ -55,14 +55,14 @@ class GestionInventario:
             print(f"Permiso denegado al leer '{self.ruta}'.")
         except Exception as e:
             print(f"Error leyendo '{self.ruta}': {e}")
-        return productos
+        return lproducto
 
-    def guardar(self, productos: List[Producto]) -> bool:
+    def guardar(self, lproducto: List[Producto]) -> bool:
         try:
             with open(self.ruta, "w", newline="", encoding="utf-8") as f:
                 writer = csv.DictWriter(f, fieldnames=self.CAMPOS)
                 writer.writeheader()
-                for p in productos:
+                for p in lproducto:
                     writer.writerow({
                         "id": p.get_id(),
                         "nombre": p.get_nombre(),
