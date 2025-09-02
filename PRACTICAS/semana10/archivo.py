@@ -19,10 +19,7 @@ class GestionInventario:
 
     def _verificar_existencia_archivo(self) -> None:
         if os.path.exists(self.ruta):
-            print(f"Si existe el archivo '{self.ruta}': no hacer nada")
             return
-
-        print(f"No existe el archivo '{self.ruta}': crearlo")
         try:
             with open(self.ruta, "w", newline="", encoding="utf-8") as f:
                 writer = csv.DictWriter(f, fieldnames=self.CAMPOS)
