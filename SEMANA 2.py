@@ -35,7 +35,7 @@ class Persona:
         self._genero = genero
         self._edad = edad
 
-    # -------- MÉTODO DE ABSTRACCIÓN --------
+    # -------- MeTODO DE ABSTRACCIÓN --------
     def mostrar_info(self):
         return f"{self._nombre} {self._apellido} ({self._genero}), {self._edad} años"
 
@@ -82,9 +82,9 @@ class Estudiante(Persona):
         self.carrera = carrera
 
     # ---------------------------------------------
-    # 4. POLIMORFISMO: método mostrar_info() redefinido
+    # 4. POLIMORFISMO: metodo mostrar_info() redefinido
     # ---------------------------------------------
-    # El polimorfismo permite que el mismo método (mostrar_info)
+    # El polimorfismo permite que el mismo metodo (mostrar_info)
     # funcione diferente según el tipo de objeto.
     #
     # Aquí, Estudiante redefine mostrar_info() para incluir su carrera.
