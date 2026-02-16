@@ -44,3 +44,5 @@ class Producto:
     def __str__(self):
         """Devuelve una representación en cadena del producto."""
         return f"ID: {self._id:03d} | Nombre: {self._nombre:<15} | Stock: {self._cantidad:4d} | Precio: ${self._precio:>7.2f}"
+
+
