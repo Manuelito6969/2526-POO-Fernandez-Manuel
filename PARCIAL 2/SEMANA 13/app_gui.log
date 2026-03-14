@@ -1,0 +1,7 @@
+2026-03-14 09:59:57,094 [INFO] Archivo de datos no existe, empezando con lista vacía.
+2026-03-14 10:00:09,776 [INFO] Datos guardados: 1 ítems
+2026-03-14 10:00:09,815 [INFO] Dato agregado: Hola mundo
+2026-03-14 10:00:13,955 [INFO] Datos guardados: 2 ítems
+2026-03-14 10:00:13,956 [INFO] Dato agregado: como estas
+2026-03-14 10:00:20,829 [INFO] Datos guardados: 1 ítems
+2026-03-14 10:00:20,830 [INFO] Dato eliminado: como estas
